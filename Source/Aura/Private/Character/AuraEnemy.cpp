@@ -4,12 +4,12 @@
 #include "Character/AuraEnemy.h"
 
 
-void AAuraEnemy::HightlightActor()
+void AAuraEnemy::HighlightActor()
 {
-
+	bHighlighted = true;
 }
 
-void AAuraEnemy::UnHightlightActor()
+void AAuraEnemy::UnHighlightActor()
 {
-
+	bHighlighted = false;
 }
