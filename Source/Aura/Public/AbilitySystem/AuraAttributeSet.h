@@ -15,6 +15,11 @@
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
 
+class ACharacter;
+class AController;
+class AActor;
+
+
 USTRUCT()
 struct FEffectProperties
 {
