@@ -3,6 +3,7 @@
 
 #include "UI/HUD/AuraHUD.h"
 #include "UI/Widget/AuraUserWidget.h"
+#include <Engine/DataTable.h>
 #include "UI/WigdetController/OverlayWidgetController.h"
 
 

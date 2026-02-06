@@ -5,7 +5,8 @@
 #include "CoreMinimal.h"
 #include "UI/WigdetController/AuraWidgetController.h"
 #include "GameplayTagContainer.h"
-#include "Engine/DataTable.h"
+//#include "Engine/DataTable.h"
+#include <Engine/DataTable.h>
 #include "OverlayWidgetController.generated.h"
 
 struct FOnAttributeChangeData;
