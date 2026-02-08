@@ -18,6 +18,11 @@ public:
 	
 	void PossessedBy(AController* NewController) override;
 	void OnRep_PlayerState() override;
+
+	/* Combat Interface */
+	virtual int32 GetPlayerLevel() override;
+	/* end Combat Interface */
+
 private:
 	void InitAbilityActorInfo() override;
 };
