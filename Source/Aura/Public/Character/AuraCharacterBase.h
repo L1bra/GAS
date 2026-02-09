@@ -25,11 +25,10 @@ public:
 protected:
 	virtual void InitAbilityActorInfo();
 
+	void BeginPlay() override;
 	void ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float level) const;
 	void InitializeDefaultsAttributes() const;
 protected:
-	void BeginPlay() override;
-
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<USkeletalMeshComponent> Weapon;
 
