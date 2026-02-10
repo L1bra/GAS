@@ -6,10 +6,15 @@
 #include <GameplayTagsManager.h>
 
 
-FAuraGameplayTags FAuraGameplayTags::instance;
+//FAuraGameplayTags FAuraGameplayTags::instance;
 
 void FAuraGameplayTags::InitializeNativeGameplayTags()
 {
+	FAuraGameplayTags::Get().Attributes_Primary_Strength = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.Strength"), FString("Increases physical damage"));
+	FAuraGameplayTags::Get().Attributes_Primary_Intelligence = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.Intelligence"), FString("Increases magical damage"));
+	FAuraGameplayTags::Get().Attributes_Primary_Resilience = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.Resilience"), FString("Increases Armor and Armor Penetration"));
+	FAuraGameplayTags::Get().Attributes_Primary_Vigor = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.Vigor"), FString("Increases Health"));
+
 	FAuraGameplayTags::Get().Attributes_Secondary_Armor = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.Armor"), FString("Reduces damage taken, improves Block Chance"));
 	FAuraGameplayTags::Get().Attributes_Secondary_ArmorPenetration = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.ArmorPenetration"), FString("Ignores percentage of enemy Armor, increases Crit Hit Chance"));
 	FAuraGameplayTags::Get().Attributes_Secondary_BlockChance = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.BlockChance"), FString("Chance to cut incoming damage in half"));

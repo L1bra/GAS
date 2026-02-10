@@ -17,12 +17,17 @@ struct FAuraGameplayTags
 public:
 	static FAuraGameplayTags& Get()
 	{
-		//static FAuraGameplayTags instance;
+		static FAuraGameplayTags instance;
 		return instance;
 	}
 
 	static void InitializeNativeGameplayTags();
 public:
+	FGameplayTag Attributes_Primary_Strength;
+	FGameplayTag Attributes_Primary_Intelligence;
+	FGameplayTag Attributes_Primary_Resilience;
+	FGameplayTag Attributes_Primary_Vigor;
+
 	FGameplayTag Attributes_Secondary_Armor;
 	FGameplayTag Attributes_Secondary_ArmorPenetration;
 	FGameplayTag Attributes_Secondary_BlockChance;
@@ -43,5 +48,5 @@ private:
 	FAuraGameplayTags(FAuraGameplayTags&&) = delete;
 	FAuraGameplayTags& operator=(FAuraGameplayTags&&) = delete;
 private:
-	static FAuraGameplayTags instance;
+	//static FAuraGameplayTags instance;
 };
