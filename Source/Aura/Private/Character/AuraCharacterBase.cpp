@@ -3,6 +3,8 @@
 
 #include "Character/AuraCharacterBase.h"
 #include <AbilitySystemComponent.h>
+#include "AbilitySystem/AuraAbilitySystemComponent.h"
+
 
 AAuraCharacterBase::AAuraCharacterBase()
 {
@@ -21,6 +23,14 @@ UAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const
 UAttributeSet* AAuraCharacterBase::GetAttributeSet() const
 {
 	return AttributeSet;
+}
+
+void AAuraCharacterBase::AddCharacterAbilities()
+{
+	UAuraAbilitySystemComponent* AuraASC = CastChecked<UAuraAbilitySystemComponent>(AbilitySystemComponent);
+	if (!HasAuthority()) return;
+	
+	AuraASC->AddCharacterAbilities(StartupAbilities);
 }
 
 void AAuraCharacterBase::InitAbilityActorInfo()
