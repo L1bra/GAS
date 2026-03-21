@@ -9,6 +9,9 @@
 
 class UAttributeInfo;
 struct FAuraAttributeInfo;
+struct FGameplayTag;
+struct FGameplayAttribute;
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAttributeInfoSignature, const FAuraAttributeInfo&, Info);
 
 /**
@@ -21,6 +24,8 @@ class AURA_API UAttributeMenuWidgetController : public UAuraWidgetController
 public:
 	void BindCallbacksToDependencies() override;
 	void BroadcastInitialValues() override;
+private:
+	void BroadcastAttributeInfo(const FGameplayTag& Tag, const FGameplayAttribute& Attribute) const;
 public:
 	UPROPERTY(BlueprintAssignable, Category="GAS|Attributes")
 	FAttributeInfoSignature AttributeInfoDelegate;
