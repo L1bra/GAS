@@ -57,6 +57,12 @@ void AAuraCharacterBase::InitializeDefaultsAttributes() const
 	ApplyEffectToSelf(DefaultVitalAttributes, 1.f);
 }
 
+FVector AAuraCharacterBase::GetCombatSocketLocation()
+{
+	check(Weapon);
+	return Weapon->GetSocketLocation(WeaponTipSocketName);
+}
+
 void AAuraCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();	
