@@ -52,6 +52,8 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UAuraAbilitySystemComponent> AuraAbilitySystemComponent;
 
+	FHitResult CursorHit;
+
 	// Movement
 	FVector CachedDestination = FVector::ZeroVector;
 	float FollowTime = 0.f;
