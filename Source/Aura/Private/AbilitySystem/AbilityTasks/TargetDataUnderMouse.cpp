@@ -17,6 +17,7 @@ void UTargetDataUnderMouse::Activate()
 	{
 		SendMouseCursorData();
 	}
+	else
 	{
 		const FGameplayAbilitySpecHandle SpecHandle = GetAbilitySpecHandle();
 		const FPredictionKey ActivationPredictionKey = GetActivationPredictionKey();
@@ -38,8 +39,6 @@ void UTargetDataUnderMouse::SendMouseCursorData()
 	APlayerController* PC = Ability->GetCurrentActorInfo()->PlayerController.Get();
 	FHitResult CursorHit;
 	PC->GetHitResultUnderCursor(ECC_Visibility, false, CursorHit);
-
-	//ValidData.Broadcast(CursorHit.Location);
 
 	FGameplayAbilityTargetDataHandle DataHandle;
 

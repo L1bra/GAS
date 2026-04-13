@@ -27,6 +27,7 @@ protected:
 	virtual void SetupInputComponent() override;
 private:
 	void Move(const FInputActionValue& InputActionValue);
+		
 	void CursorTrace();
 
 	void AbilityInputTagPressed(FGameplayTag InputTag);
@@ -36,12 +37,18 @@ private:
 	UAuraAbilitySystemComponent* GetASC();
 
 	void AutoRun();
+
+	void ShiftPressed() { bShiftKeyDown = true; };
+	void ShiftReleased() { bShiftKeyDown = false; };
 private:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputMappingContext> AuraContext;
 
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputAction> MoveAction;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	TObjectPtr<UInputAction> ShiftAction;
 
 	IEnemyInterface* LastActor;
 	IEnemyInterface* ThisActor;
@@ -66,4 +73,6 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<USplineComponent> Spline;
+
+	bool bShiftKeyDown = false;
 };
