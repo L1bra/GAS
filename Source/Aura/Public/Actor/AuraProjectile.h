@@ -48,5 +48,5 @@ private:
 	bool bHit = false;
 
 	UPROPERTY(EditDefaultsOnly)
-	float LifeSpawn = 15.f;
+	float LifeSpan = 15.f;
 };
