@@ -31,7 +31,7 @@ protected:
 
 	void BeginPlay() override;
 	void ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float level) const;
-	void InitializeDefaultsAttributes() const;
+	virtual void InitializeDefaultsAttributes() const;
 
 	FVector GetCombatSocketLocation() override;
 protected:
