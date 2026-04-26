@@ -28,6 +28,11 @@ public:
 
 	void AddCharacterAbilities();
 	UAnimMontage* GetHitReactMontage_Implementation() override;
+
+	void Die() override;
+
+	UFUNCTION(NetMulticast, Reliable)
+	virtual void MulticastHandleDeath();
  protected:
 	virtual void InitAbilityActorInfo();
 

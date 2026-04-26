@@ -29,6 +29,8 @@ public:
 	int32 GetPlayerLevel() override;
 
 	void HitReactChanged(const FGameplayTag CallbackTag, int32 NewCount);
+
+	void Die() override;
 protected:
 	void BeginPlay() override;
 	
@@ -46,6 +48,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
 	float BaseWalkSpeed = 250.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
+	float LifeSpan = 5.f;
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
 	int32 Level = 1;
